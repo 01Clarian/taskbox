@@ -16,6 +16,10 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
                     id={`archiveTask-${id}`}
                     checked={state === 'TASK_ARCHIVED'}
                 />
+                <span
+                className='checkbox-custom'
+                onClick={()=> state === "TASK_INBOX" || state === "TASK_PINNED" ? onArchiveTask(id) : null}
+                />
             </label>
             <label htmlFor='title' aria-label={title} className={title}>
                 <input 
